@@ -32,7 +32,7 @@ class SecondRoute extends StatelessWidget {
             backgroundColor: Colors.white,
           ),
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(15.0),
           child: SizedBox(
             height: width/1.5,
             width: width/1,
@@ -183,10 +183,6 @@ class SecondRoute extends StatelessWidget {
 
   }
 }
-
-
-
-
 
 class Suraq_user extends StatefulWidget {
   @override
@@ -349,14 +345,25 @@ class _Suraq_userState extends State<Suraq_user> {
 
               ],
             ),
-            Container(
-              margin: EdgeInsets.only(top:510,left: 270),
-              child:IconButton(
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
 
-                icon: Icon(Icons.add_circle, color: Colors.red[700],size: 60,),
-                tooltip: 'search',
-                onPressed: () {},
-              ),
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40,right: 40),
+                      child: IconButton(
+
+                        icon: Icon(Icons.add_circle, color: Colors.red[700],size: 60,),
+                        tooltip: 'search',
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
 
 

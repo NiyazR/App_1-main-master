@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sparkline/flutter_sparkline.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
+import 'package:fl_chart/fl_chart.dart';
 
 class sport_user extends StatefulWidget {
   @override
@@ -273,15 +273,29 @@ class _sport_user extends State<sport_user> {
 
               ],
             ),
-            Container(
-              margin: EdgeInsets.only(top:510,left: 270),
-              child:IconButton(
 
-                icon: Icon(Icons.add_circle, color: Colors.red[700],size: 60,),
-                tooltip: 'search',
-                onPressed: () {},
-              ),
+
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40,right: 40),
+                      child: IconButton(
+
+                        icon: Icon(Icons.add_circle, color: Colors.red[700],size: 60,),
+                        tooltip: 'search',
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
+
 
 
           ],
@@ -297,103 +311,183 @@ class _sport_user extends State<sport_user> {
 
 
 class SecondRoute extends StatelessWidget {
-  @override
-  var data = [0.0, 1.0, 1.5, 2.0, 0.0, 0.0, -0.5, -1.0, -0.5, 0.0, 0.0];
-  var data1 = [1.0,-5.0,3.5,-2.0,0.5,0.7,0.8,1.0,2.0,3.0,3.2];
-
-
-  Material mychart1Items(String title, String priceVal,String subtitle) {
-    return Material(
-      color: Colors.white,
-      elevation: 10.0,
-      borderRadius: BorderRadius.circular(24.0),
-      shadowColor: Colors.red[700],
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-
-            children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       children: [
-                         Text(title, style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20.0,
-                              color: Colors.black87,
-                            ),),
-                       ],
-                     ),
-
-
-
-
-
-
-                   Padding(
-                     padding: const EdgeInsets.all(10.0),
-                     child: Sparkline(
-                          data: data,
-                          lineColor: Colors.red,
-                          pointsMode: PointsMode.all,
-                          pointSize: 8.0,
-                          pointColor: Colors.red,
-                        ),
-                   ),
-
-
-
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
 
 
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios_rounded,color: Colors.black,),  onPressed: () => Navigator.of(context).pop(null),
-        ),
+    Size size=MediaQuery.of(context).size;
+    double height=MediaQuery.of(context).size.height;
+    double width=MediaQuery.of(context).size.width;
+    double text=MediaQuery.textScaleFactorOf(context);
+    print(width);
+    const cutOffYValue = 0.0;
+    const yearTextStyle =
+    TextStyle(fontSize: 10, color: Colors.black, fontWeight: FontWeight.bold);
 
-        title: Text('Рейтинг',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-        actions: <Widget>[
 
-          ],
-        backgroundColor: Colors.white,
-      ),
-      body:Container(
-        color:Color(0xffE5E5E5),
-        child:StaggeredGridView.count(
-          crossAxisCount: 4,
-          crossAxisSpacing: 12.0,
-          mainAxisSpacing: 12.0,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: mychart1Items("Қазақстан тарихы","",""),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(icon: Icon(Icons.arrow_back_ios_rounded,color: Colors.black,),  onPressed: () => Navigator.of(context).pop(null),
             ),
-          ],
-          staggeredTiles: [
-            StaggeredTile.extent(4, 250.0),
-            StaggeredTile.extent(2, 250.0),
-            StaggeredTile.extent(2, 120.0),
-            StaggeredTile.extent(2, 120.0),
-            StaggeredTile.extent(4, 250.0),
-          ],
-        ),
+
+            title: Text('Рейтинг',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+            actions: <Widget>[
+
+            ],
+            backgroundColor: Colors.white,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: SizedBox(
+              height: width/1.5,
+              width: width/1,
+              child: Material(
+
+                color: Colors.white,
+                elevation: 10.0,
+                borderRadius: BorderRadius.circular(24.0),
+                shadowColor: Colors.red,
+
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Center(
+
+
+                    child: SizedBox(
+                      width: width/1,
+                      height: width/1.5,
+                      child: LineChart(
+                        LineChartData(
+                          lineTouchData: LineTouchData(enabled: false),
+                          lineBarsData: [
+                            LineChartBarData(
+                              spots: [
+                                FlSpot(0, 0),
+                                FlSpot(1, 1),
+                                FlSpot(2, 3),
+                                FlSpot(3, 3),
+                                FlSpot(4, 5),
+                                FlSpot(4, 4)
+
+                              ],
+                              isCurved: false,
+                              barWidth: 1,
+
+                              colors: [
+                                Colors.black,
+                              ],
+                              belowBarData: BarAreaData(
+                                show: true,
+                                colors: [Colors.red.withOpacity(0.8)],
+                                cutOffY: cutOffYValue,
+
+                                applyCutOffY: true,
+                              ),
+                              aboveBarData: BarAreaData(
+                                show: true,
+                                colors: [Colors.red.withOpacity(0.6)],
+                                cutOffY: cutOffYValue,
+                                applyCutOffY: true,
+                              ),
+                              dotData: FlDotData(
+                                show: false,
+                              ),
+                            ),],
+                          minY: 0,
+
+                          titlesData: FlTitlesData(
+
+                            bottomTitles: SideTitles(
+
+                                showTitles: true,
+                                reservedSize: 7,
+                                textStyle: yearTextStyle,
+                                getTitles: (value) {
+                                  switch (value.toInt()) {
+                                    case 0:
+                                      return '17.01';
+                                    case 1:
+                                      return '17.02';
+                                    case 2:
+                                      return '17.03';
+                                    case 3:
+                                      return '17.04';
+                                    case 4:
+                                      return '17.05';
+                                    case 5:
+                                      return '17.03';
+                                    case 6:
+                                      return '1fsd04';
+                                    case 7:
+                                      return '175';
+
+
+
+                                    default:
+                                      return '';
+                                  }
+                                }),
+                            leftTitles: SideTitles(
+                                showTitles: true,
+                                getTitles: (value) {
+                                  switch (value.toInt()) {
+                                    case 0:
+                                      return '10%';
+                                    case 1:
+                                      return '20%';
+                                    case 2:
+                                      return '30%';
+                                    case 3:
+                                      return '40%';
+                                    case 4:
+                                      return '50%';
+                                    case 5:
+                                      return '60%';
+                                    case 6:
+                                      return '70%';
+                                    case 7:
+                                      return '10%';
+
+
+
+                                    default:
+                                      return '';
+                                  }
+                                }
+                            ),
+                          ),
+                          axisTitleData: FlAxisTitleData(topTitle: AxisTitle(showTitle: true, titleText: 'Жүру', margin: 10, textStyle: yearTextStyle, textAlign: TextAlign.left),
+                              bottomTitle: AxisTitle(
+                                  showTitle: true,
+                                  margin: 10,
+                                  reservedSize: 2,
+                                  titleText: 'Күндер',
+                                  textStyle: yearTextStyle,
+                                  textAlign: TextAlign.right)),
+                          gridData:
+
+                          FlGridData(
+
+                            show: false,
+                            checkToShowHorizontalLine: (double value) {
+                              return value == 1 || value == 2 || value == 3 || value == 4;
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ),
+                ),
+              ),
+            ),
+          )
+
       ),
     );
+
   }
 }

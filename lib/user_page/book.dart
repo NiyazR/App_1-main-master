@@ -24,8 +24,19 @@ class _book_user extends State<book_user> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
+
+    Size size=MediaQuery.of(context).size;
+    double height=MediaQuery.of(context).size.height;
+    double width=MediaQuery.of(context).size.width;
+    double text=MediaQuery.textScaleFactorOf(context);
+    print(width);
+
+
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -58,8 +69,8 @@ class _book_user extends State<book_user> {
                       Container(
 
                         child: SizedBox(
-                          height: 50,
-                          width: 160,
+                          height: width/7,
+                          width: width/2.2,
 
                             child: RaisedButton(
                                 elevation: 10.0,
@@ -102,8 +113,8 @@ class _book_user extends State<book_user> {
                       Container(
 
                         child: SizedBox(
-                          height: 50,
-                          width: 160,
+                          height: width/7,
+                          width: width/2.2,
 
                             child: RaisedButton(
 
@@ -355,19 +366,26 @@ class _book_user extends State<book_user> {
               ],
             ),
 
-             Column(
-                mainAxisSize: MainAxisSize.max,
-                 mainAxisAlignment: MainAxisAlignment.end,
-               crossAxisAlignment: CrossAxisAlignment.end,
-               children: [
-                 IconButton(
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
 
-                    icon: Icon(Icons.add_circle, color: Colors.red[700],size: 60,),
-                    tooltip: 'search',
-                    onPressed: () {},
-                  ),
-               ],
-             ),
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40,right: 40),
+                      child: IconButton(
+
+                        icon: Icon(Icons.add_circle, color: Colors.red[700],size: 60,),
+                        tooltip: 'search',
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
 
           ],
         ),
