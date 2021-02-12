@@ -76,7 +76,6 @@ class _book_user extends State<book_user> {
                                 elevation: 10.0,
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
                                 highlightElevation: 20.0,
-
                                 hoverColor: Colors.white,
                                 color: Colors.white,
                                 child: SingleChildScrollView(
@@ -84,30 +83,20 @@ class _book_user extends State<book_user> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
-
                                           child:
-
                                           Text('Оқылған',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15))),
                                       Container(
-
                                           child:
-
                                           Text('кітаптар',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15))),
-
                                     ],
                                   ),
                                 ),
-
                                 textColor: Colors.black,
-
-
                                 disabledTextColor: Colors.black,
                                 disabledColor: Colors.grey,
                                 onPressed: (){
 
-                                }
-
-                            ),
+                                }),
                           ),
                         ),
                       Container(

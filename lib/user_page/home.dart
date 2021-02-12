@@ -11,6 +11,14 @@ class  Home_user extends StatefulWidget {
 class _Home_user extends State< Home_user> {
   @override
   Widget build(BuildContext context) {
+    Size size=MediaQuery.of(context).size;
+    double height=MediaQuery.of(context).size.height;
+    double width=MediaQuery.of(context).size.width;
+    double text=MediaQuery.textScaleFactorOf(context);
+    print(width);
+
+
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -27,44 +35,33 @@ class _Home_user extends State< Home_user> {
                      child: FlexibleSpaceBar(
                            centerTitle: true,
                                 title: Center(
-
-                                     child: Column(
-
-                                             children: <Widget>[
-                                               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  child: Column(
+                                       children: <Widget>[
+                                               Row(
                                                  children: [
-                                                   Column(
-                                                     mainAxisAlignment: MainAxisAlignment.center,
-                                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                                     children: <Widget>[
-                                                       Container(
-                                                         margin: EdgeInsets.only(right: 299),
-                                                         child: IconButton(
 
-                                                           icon: Transform.rotate(
-                                                             angle: 0 * pi/180,
-                                                             child: Icon(Icons.sort_outlined,size: 25,),
+                                                       Column(
+                                                         mainAxisAlignment: MainAxisAlignment.start,
+                                                         children: [
+                                                           IconButton(
+                                                             icon: Transform.rotate(
+                                                                 angle: 0 * pi/180,
+                                                                 child: Icon(Icons.sort_outlined,size: width/12,),
+                                                               ),
+                                                             onPressed: () {
+                                                                 Navigator.push(context, MaterialPageRoute(builder: (context) =>  NiasApp()),
+                                                                 );
+                                                                 },
                                                            ),
-
-                                                           onPressed: () {
-                                                             Navigator.push(context, MaterialPageRoute(builder: (context) =>  NiasApp()),
-                                                             );
-
-                                                           },
-                                                         ),
+                                                         ],
                                                        ),
-
-                                                     ],
-                                                   ),
-
 
                                                  ],
                                                ),
 
 
 
-
-                                                 Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                    children: [
                                                      Column(
                                                        mainAxisAlignment: MainAxisAlignment.center,
