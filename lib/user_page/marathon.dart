@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -139,6 +140,7 @@ class SecondRoute extends StatelessWidget {
 
 
     return MaterialApp(
+
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(

@@ -4,7 +4,6 @@ import 'drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:ui';
-
 import 'kitap_bet_about.dart';
 
 
@@ -40,13 +39,6 @@ class NiasApp extends StatelessWidget{
     {
       return AlertDialog(
         backgroundColor: Colors.white,
-
-
-
-
-
-
-
           title: SizedBox(
             height: width/5,
             width: width/3,
@@ -55,14 +47,8 @@ class NiasApp extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                   RaisedButton(
-
-
                     color: Colors.red,
-
-
                     hoverColor: Colors.red,
-
-
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
 
                     child: SizedBox(
@@ -77,23 +63,14 @@ class NiasApp extends StatelessWidget{
                         ),
 
                     ),
-
-
-
                     onPressed: ()  {
                       Navigator.push(context, MaterialPageRoute(builder: (context) =>  Qazaqwa()),
                       );
                     },
                   ),
                   RaisedButton(
-
-
                     color: Colors.red,
-
-
                     hoverColor: Colors.red,
-
-
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
 
                     child: SizedBox(
