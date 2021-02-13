@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -35,35 +34,34 @@ class _HomeCalendarPageState extends State<HomeCalendarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-        iconTheme: (
-            IconThemeData(
-                color: Colors.black)),
+        iconTheme: (IconThemeData(color: Colors.black)),
 
         title: Container(
-
-            child: Text("Марафон",style: TextStyle(color: Colors.black),)),
+            child: Text(
+          "Марафон",
+          style: TextStyle(color: Colors.black),
+        )),
 
         actions: <Widget>[
           IconButton(
-
-            icon: Icon(Icons.trending_up_rounded, color: Colors.black,),
-
+            icon: Icon(
+              Icons.trending_up_rounded,
+              color: Colors.black,
+            ),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => SecondRoute()),
               );
-
             },
           ), //IconButton
           //IconButton
-        ], //<Widget>[]
+        ],
+        //<Widget>[]
         backgroundColor: Colors.white,
         elevation: 50.0,
 
         //IconButton
-
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -77,8 +75,7 @@ class _HomeCalendarPageState extends State<HomeCalendarPage> {
                   todayStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22.0,
-                      color: Colors.white)
-              ),
+                      color: Colors.white)),
               headerStyle: HeaderStyle(
                 centerHeaderTitle: true,
                 formatButtonDecoration: BoxDecoration(
@@ -89,12 +86,10 @@ class _HomeCalendarPageState extends State<HomeCalendarPage> {
                 formatButtonShowsNext: false,
               ),
               startingDayOfWeek: StartingDayOfWeek.monday,
-
               builders: CalendarBuilders(
                 selectedDayBuilder: (context, date, events) => Container(
                     margin: const EdgeInsets.all(5.0),
                     alignment: Alignment.center,
-
                     decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(8.0)),
@@ -105,7 +100,6 @@ class _HomeCalendarPageState extends State<HomeCalendarPage> {
                 todayDayBuilder: (context, date, events) => Container(
                     margin: const EdgeInsets.all(5.0),
                     alignment: Alignment.center,
-
                     decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(8.0)),
@@ -124,58 +118,52 @@ class _HomeCalendarPageState extends State<HomeCalendarPage> {
 }
 
 class SecondRoute extends StatelessWidget {
-
-
-
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
-    double height=MediaQuery.of(context).size.height;
-    double width=MediaQuery.of(context).size.width;
-    double text=MediaQuery.textScaleFactorOf(context);
+    double width = MediaQuery.of(context).size.width;
     print(width);
     const cutOffYValue = 0.0;
-    const yearTextStyle =
-    TextStyle(fontSize: 10, color: Colors.black, fontWeight: FontWeight.bold);
-
+    const yearTextStyle = TextStyle(
+        fontSize: 10, color: Colors.black, fontWeight: FontWeight.bold);
 
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
-            leading: IconButton(icon: Icon(Icons.arrow_back_ios_rounded,color: Colors.black,),  onPressed: () => Navigator.of(context).pop(null),
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: Colors.black,
+              ),
+              onPressed: () => Navigator.of(context).pop(null),
             ),
-
-            title: Text('Рейтинг',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-            actions: <Widget>[
-
-            ],
+            title: Text(
+              'Рейтинг',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            actions: <Widget>[],
             backgroundColor: Colors.white,
           ),
           body: Padding(
             padding: const EdgeInsets.all(15.0),
             child: SizedBox(
-              height: width/1.5,
-              width: width/1,
+              height: width / 1.5,
+              width: width / 1,
               child: Material(
-
                 color: Colors.white,
                 elevation: 10.0,
                 borderRadius: BorderRadius.circular(24.0),
                 shadowColor: Colors.red,
-
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Center(
-
-
                     child: SizedBox(
-                      width: width/1,
-                      height: width/1.5,
+                      width: width / 1,
+                      height: width / 1.5,
                       child: LineChart(
                         LineChartData(
-                          lineTouchData: LineTouchData(enabled: false),
+                          lineTouchData: LineTouchData(enabled: true),
                           lineBarsData: [
                             LineChartBarData(
                               spots: [
@@ -185,19 +173,16 @@ class SecondRoute extends StatelessWidget {
                                 FlSpot(3, 3),
                                 FlSpot(4, 5),
                                 FlSpot(4, 4)
-
                               ],
                               isCurved: false,
-                              barWidth: 1,
-
+                              barWidth: 1.5,
                               colors: [
-                                Colors.black,
+                                Colors.grey[700],
                               ],
                               belowBarData: BarAreaData(
                                 show: true,
                                 colors: [Colors.red.withOpacity(0.8)],
                                 cutOffY: cutOffYValue,
-
                                 applyCutOffY: true,
                               ),
                               aboveBarData: BarAreaData(
@@ -209,15 +194,13 @@ class SecondRoute extends StatelessWidget {
                               dotData: FlDotData(
                                 show: false,
                               ),
-                            ),],
+                            ),
+                          ],
                           minY: 0,
-
                           titlesData: FlTitlesData(
-
                             bottomTitles: SideTitles(
-
                                 showTitles: true,
-                                reservedSize: 7,
+                                reservedSize: 0,
                                 textStyle: yearTextStyle,
                                 getTitles: (value) {
                                   switch (value.toInt()) {
@@ -237,8 +220,6 @@ class SecondRoute extends StatelessWidget {
                                       return '1fsd04';
                                     case 7:
                                       return '175';
-
-
 
                                     default:
                                       return '';
@@ -263,17 +244,19 @@ class SecondRoute extends StatelessWidget {
                                     case 6:
                                       return '70%';
                                     case 7:
-                                      return '10%';
-
-
-
+                                      return '80%';
                                     default:
                                       return '';
                                   }
-                                }
-                            ),
+                                }),
                           ),
-                          axisTitleData: FlAxisTitleData(topTitle: AxisTitle(showTitle: true, titleText: 'Жүру', margin: 10, textStyle: yearTextStyle, textAlign: TextAlign.left),
+                          axisTitleData: FlAxisTitleData(
+                              topTitle: AxisTitle(
+                                  showTitle: true,
+                                  titleText: 'Жүру',
+                                  margin: 10,
+                                  textStyle: yearTextStyle,
+                                  textAlign: TextAlign.left),
                               bottomTitle: AxisTitle(
                                   showTitle: true,
                                   margin: 10,
@@ -281,27 +264,23 @@ class SecondRoute extends StatelessWidget {
                                   titleText: 'Күндер',
                                   textStyle: yearTextStyle,
                                   textAlign: TextAlign.right)),
-                          gridData:
-
-                          FlGridData(
-
+                          gridData: FlGridData(
                             show: false,
                             checkToShowHorizontalLine: (double value) {
-                              return value == 1 || value == 2 || value == 3 || value == 4;
+                              return value == 1 ||
+                                  value == 2 ||
+                                  value == 3 ||
+                                  value == 4;
                             },
                           ),
                         ),
                       ),
                     ),
-
                   ),
                 ),
               ),
             ),
-          )
-
-      ),
+          )),
     );
-
   }
 }

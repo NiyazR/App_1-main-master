@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:fl_chart/fl_chart.dart';
 
 class sport_user extends StatefulWidget {
@@ -16,24 +15,29 @@ class _sport_user extends State<sport_user> {
         appBar: AppBar(
           title: Container(
               margin: EdgeInsets.only(left: 20),
-              child: Text("Спорт",style: TextStyle(color: Colors.black),)),
+              child: Text(
+                "Спорт",
+                style: TextStyle(color: Colors.black),
+              )),
 
           actions: <Widget>[
             IconButton(
-
-              icon: Icon(Icons.trending_up_rounded , color: Colors.black,),
-
-              onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SecondRoute()),
-              );},
+              icon: Icon(
+                Icons.trending_up_rounded,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                );
+              },
             ), //IconButton
             //IconButton
           ], //<Widget>[]
           backgroundColor: Colors.white,
           elevation: 50.0,
           //IconButton
-
         ),
         body: Stack(
           children: [
@@ -44,72 +48,108 @@ class _sport_user extends State<sport_user> {
                   shape: RoundedRectangleBorder(
                       side: BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(10)),
-
-
                   margin: const EdgeInsets.only(left: 25, right: 25, top: 25),
                   elevation: 10.0,
                   child: SizedBox(
                     height: 90.0,
                     child: InkWell(
                       child: Row(
-
                         children: [
-
                           Container(
                             margin: EdgeInsets.only(left: 20),
                             child: Row(
                               children: [
                                 Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       children: [
-                                        Icon(Icons.directions_run_rounded, color: Colors.black,size: 22,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('Жүгіру',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)),
+                                        Icon(
+                                          Icons.directions_run_rounded,
+                                          color: Colors.black,
+                                          size: 22,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              'Жүгіру',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                            )),
                                       ],
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.event, color: Colors.black,size: 21,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('19.01',style: TextStyle(fontSize: 15),)),
+                                        Icon(
+                                          Icons.event,
+                                          color: Colors.black,
+                                          size: 21,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              '19.01',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
                                       ],
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.timer_outlined , color: Colors.black,size: 19,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('56',style: TextStyle(fontSize: 15),)),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('мин',style: TextStyle(fontSize: 15),)),
+                                        Icon(
+                                          Icons.timer_outlined,
+                                          color: Colors.black,
+                                          size: 19,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              '56',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              'мин',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
                                       ],
                                     ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
-
                                   children: [
-
-
                                     Container(
-                                      margin: EdgeInsets.only(left: 120,bottom: 10),
+                                      margin: EdgeInsets.only(
+                                          left: 120, bottom: 10),
                                       child: Row(
                                         children: [
-
-                                          Container(margin:EdgeInsets.only(left: 5),child: Text('6340',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)),
-                                          Container(margin:EdgeInsets.only(left: 5),child: Text('қадам',style: TextStyle(fontSize: 15),)),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 5),
+                                              child: Text(
+                                                '6340',
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 5),
+                                              child: Text(
+                                                'қадам',
+                                                style: TextStyle(fontSize: 15),
+                                              )),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-
                               ],
                             ),
-
                           ),
-
-
-
                         ],
                       ),
                     ),
@@ -120,72 +160,108 @@ class _sport_user extends State<sport_user> {
                   shape: RoundedRectangleBorder(
                       side: BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(10)),
-
-
                   margin: const EdgeInsets.only(left: 25, right: 25, top: 25),
                   elevation: 10.0,
                   child: SizedBox(
                     height: 90.0,
                     child: InkWell(
                       child: Row(
-
                         children: [
-
                           Container(
                             margin: EdgeInsets.only(left: 20),
                             child: Row(
                               children: [
                                 Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       children: [
-                                        Icon(Icons.directions_run_rounded, color: Colors.black,size: 22,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('Жүгіру',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)),
+                                        Icon(
+                                          Icons.directions_run_rounded,
+                                          color: Colors.black,
+                                          size: 22,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              'Жүгіру',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                            )),
                                       ],
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.event, color: Colors.black,size: 21,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('19.01',style: TextStyle(fontSize: 15),)),
+                                        Icon(
+                                          Icons.event,
+                                          color: Colors.black,
+                                          size: 21,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              '19.01',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
                                       ],
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.timer_outlined , color: Colors.black,size: 19,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('56',style: TextStyle(fontSize: 15),)),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('мин',style: TextStyle(fontSize: 15),)),
+                                        Icon(
+                                          Icons.timer_outlined,
+                                          color: Colors.black,
+                                          size: 19,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              '56',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              'мин',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
                                       ],
                                     ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
-
                                   children: [
-
-
                                     Container(
-                                      margin: EdgeInsets.only(left: 120,bottom: 10),
+                                      margin: EdgeInsets.only(
+                                          left: 120, bottom: 10),
                                       child: Row(
                                         children: [
-
-                                          Container(margin:EdgeInsets.only(left: 5),child: Text('6340',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)),
-                                          Container(margin:EdgeInsets.only(left: 5),child: Text('қадам',style: TextStyle(fontSize: 15),)),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 5),
+                                              child: Text(
+                                                '6340',
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 5),
+                                              child: Text(
+                                                'қадам',
+                                                style: TextStyle(fontSize: 15),
+                                              )),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-
                               ],
                             ),
-
                           ),
-
-
-
                         ],
                       ),
                     ),
@@ -196,97 +272,129 @@ class _sport_user extends State<sport_user> {
                   shape: RoundedRectangleBorder(
                       side: BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(10)),
-
-
                   margin: const EdgeInsets.only(left: 25, right: 25, top: 25),
                   elevation: 10.0,
                   child: SizedBox(
                     height: 90.0,
                     child: InkWell(
                       child: Row(
-
                         children: [
-
                           Container(
                             margin: EdgeInsets.only(left: 20),
                             child: Row(
                               children: [
                                 Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       children: [
-                                        Icon(Icons.directions_run_rounded, color: Colors.black,size: 22,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('Жүгіру',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)),
+                                        Icon(
+                                          Icons.directions_run_rounded,
+                                          color: Colors.black,
+                                          size: 22,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              'Жүгіру',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                            )),
                                       ],
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.event, color: Colors.black,size: 21,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('19.01',style: TextStyle(fontSize: 15),)),
+                                        Icon(
+                                          Icons.event,
+                                          color: Colors.black,
+                                          size: 21,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              '19.01',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
                                       ],
                                     ),
                                     Row(
                                       children: [
-                                        Icon(Icons.timer_outlined , color: Colors.black,size: 19,),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('56',style: TextStyle(fontSize: 15),)),
-                                        Container(margin:EdgeInsets.only(left: 5),child: Text('мин',style: TextStyle(fontSize: 15),)),
+                                        Icon(
+                                          Icons.timer_outlined,
+                                          color: Colors.black,
+                                          size: 19,
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              '56',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 5),
+                                            child: Text(
+                                              'мин',
+                                              style: TextStyle(fontSize: 15),
+                                            )),
                                       ],
                                     ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
-
                                   children: [
-
-
                                     Container(
-                                      margin: EdgeInsets.only(left: 120,bottom: 10),
+                                      margin: EdgeInsets.only(
+                                          left: 120, bottom: 10),
                                       child: Row(
                                         children: [
-
-                                          Container(margin:EdgeInsets.only(left: 5),child: Text('6340',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)),
-                                          Container(margin:EdgeInsets.only(left: 5),child: Text('қадам',style: TextStyle(fontSize: 15),)),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 5),
+                                              child: Text(
+                                                '6340',
+                                                style: TextStyle(
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )),
+                                          Container(
+                                              margin: EdgeInsets.only(left: 5),
+                                              child: Text(
+                                                'қадам',
+                                                style: TextStyle(fontSize: 15),
+                                              )),
                                         ],
                                       ),
                                     ),
                                   ],
                                 ),
-
                               ],
                             ),
-
                           ),
-
-
-
                         ],
                       ),
                     ),
                   ),
                 ),
-
-
-
-
               ],
             ),
-
-
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
-
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 40,right: 40),
+                      padding: const EdgeInsets.only(bottom: 40, right: 40),
                       child: IconButton(
-
-                        icon: Icon(Icons.add_circle, color: Colors.red[700],size: 60,),
+                        icon: Icon(
+                          Icons.add_circle,
+                          color: Colors.red[700],
+                          size: 60,
+                        ),
                         tooltip: 'search',
                         onPressed: () {},
                       ),
@@ -295,70 +403,57 @@ class _sport_user extends State<sport_user> {
                 ),
               ],
             ),
-
-
-
           ],
         ),
-
-
       ),
     );
   }
 }
 
-
-
-
 class SecondRoute extends StatelessWidget {
-
-
-
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
-    double height=MediaQuery.of(context).size.height;
-    double width=MediaQuery.of(context).size.width;
-    double text=MediaQuery.textScaleFactorOf(context);
+    double width = MediaQuery.of(context).size.width;
     print(width);
     const cutOffYValue = 0.0;
-    const yearTextStyle =
-    TextStyle(fontSize: 10, color: Colors.black, fontWeight: FontWeight.bold);
-
+    const yearTextStyle = TextStyle(
+        fontSize: 10, color: Colors.black, fontWeight: FontWeight.bold);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
-            leading: IconButton(icon: Icon(Icons.arrow_back_ios_rounded,color: Colors.black,),  onPressed: () => Navigator.of(context).pop(null),
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: Colors.black,
+              ),
+              onPressed: () => Navigator.of(context).pop(null),
             ),
-
-            title: Text('Рейтинг',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-            actions: <Widget>[
-
-            ],
+            title: Text(
+              'Рейтинг',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            actions: <Widget>[],
             backgroundColor: Colors.white,
           ),
           body: Padding(
             padding: const EdgeInsets.all(15.0),
             child: SizedBox(
-              height: width/1.5,
-              width: width/1,
+              height: width / 1.5,
+              width: width / 1,
               child: Material(
-
                 color: Colors.white,
                 elevation: 10.0,
                 borderRadius: BorderRadius.circular(24.0),
                 shadowColor: Colors.red,
-
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Center(
-
-
                     child: SizedBox(
-                      width: width/1,
-                      height: width/1.5,
+                      width: width / 1,
+                      height: width / 1.5,
                       child: LineChart(
                         LineChartData(
                           lineTouchData: LineTouchData(enabled: false),
@@ -371,11 +466,9 @@ class SecondRoute extends StatelessWidget {
                                 FlSpot(3, 3),
                                 FlSpot(4, 5),
                                 FlSpot(4, 4)
-
                               ],
                               isCurved: false,
                               barWidth: 1,
-
                               colors: [
                                 Colors.black,
                               ],
@@ -383,7 +476,6 @@ class SecondRoute extends StatelessWidget {
                                 show: true,
                                 colors: [Colors.red.withOpacity(0.8)],
                                 cutOffY: cutOffYValue,
-
                                 applyCutOffY: true,
                               ),
                               aboveBarData: BarAreaData(
@@ -395,13 +487,11 @@ class SecondRoute extends StatelessWidget {
                               dotData: FlDotData(
                                 show: false,
                               ),
-                            ),],
+                            ),
+                          ],
                           minY: 0,
-
                           titlesData: FlTitlesData(
-
                             bottomTitles: SideTitles(
-
                                 showTitles: true,
                                 reservedSize: 7,
                                 textStyle: yearTextStyle,
@@ -423,8 +513,6 @@ class SecondRoute extends StatelessWidget {
                                       return '1fsd04';
                                     case 7:
                                       return '175';
-
-
 
                                     default:
                                       return '';
@@ -451,15 +539,18 @@ class SecondRoute extends StatelessWidget {
                                     case 7:
                                       return '10%';
 
-
-
                                     default:
                                       return '';
                                   }
-                                }
-                            ),
+                                }),
                           ),
-                          axisTitleData: FlAxisTitleData(topTitle: AxisTitle(showTitle: true, titleText: 'Жүру', margin: 10, textStyle: yearTextStyle, textAlign: TextAlign.left),
+                          axisTitleData: FlAxisTitleData(
+                              topTitle: AxisTitle(
+                                  showTitle: true,
+                                  titleText: 'Жүру',
+                                  margin: 10,
+                                  textStyle: yearTextStyle,
+                                  textAlign: TextAlign.left),
                               bottomTitle: AxisTitle(
                                   showTitle: true,
                                   margin: 10,
@@ -467,27 +558,23 @@ class SecondRoute extends StatelessWidget {
                                   titleText: 'Күндер',
                                   textStyle: yearTextStyle,
                                   textAlign: TextAlign.right)),
-                          gridData:
-
-                          FlGridData(
-
+                          gridData: FlGridData(
                             show: false,
                             checkToShowHorizontalLine: (double value) {
-                              return value == 1 || value == 2 || value == 3 || value == 4;
+                              return value == 1 ||
+                                  value == 2 ||
+                                  value == 3 ||
+                                  value == 4;
                             },
                           ),
                         ),
                       ),
                     ),
-
                   ),
                 ),
               ),
             ),
-          )
-
-      ),
+          )),
     );
-
   }
 }
